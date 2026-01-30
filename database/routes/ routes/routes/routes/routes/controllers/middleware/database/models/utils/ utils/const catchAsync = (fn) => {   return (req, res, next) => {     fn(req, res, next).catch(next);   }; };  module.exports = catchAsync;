@@ -1,0 +1,46 @@
+# Create backend directory structure
+mkdir -p backend/{routes,controllers,middleware,database/{models,seed},utils,config}
+
+# Create all files
+touch backend/server.js
+touch backend/package.json
+touch backend/.env
+touch backend/.gitignore
+
+# Create route files
+touch backend/routes/{users.js,jobs.js,payments.js,courses.js,ai.js}
+
+# Create controller files
+touch backend/controllers/{authController.js,paymentController.js,jobController.js,userController.js,courseController.js,aiController.js}
+
+# Create middleware files
+touch backend/middleware/{auth.js,errorHandler.js,validation.js,rateLimit.js}
+
+# Create model files
+touch backend/database/models/{User.js,Job.js,Course.js,Payment.js,Chat.js}
+
+# Create utility files
+touch backend/utils/{appError.js,catchAsync.js,emailService.js,paymentGateway.js,aiService.js,validators.js}
+
+# Create database files
+touch backend/database/db.js
+touch backend/config/database.js
+
+# Create seed data
+touch backend/database/seed/index.js
+
+# Initialize npm
+cd backend
+npm init -y
+
+# Install dependencies
+npm install express mongoose dotenv bcryptjs jsonwebtoken cors express-rate-limit helmet express-validator multer cloudinary nodemailer axios stripe openai socket.io redis winston moment
+
+# Install dev dependencies
+npm install -D nodemon jest supertest
+
+# Create logs directory
+mkdir logs
+
+# Start the server in development mode
+npm run dev
